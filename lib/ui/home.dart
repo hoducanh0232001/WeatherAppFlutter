@@ -29,14 +29,14 @@ class _HomeState extends State<Home> {
   int temperature = 0;
   int maxTemp = 0;
   int cloud = 0;
-  String weather = 'Loading...';
+  String weather = '';
   int humidity = 0;
   int windSpeed = 0;
   var currentDate = '';
   int woeid = 44418; // where on earth id for London
   String location = 'Vietnam';
-  String weatherIcon = 'Loading...';
-  String currentWeatherStatus = 'Loading...';
+  String weatherIcon = '';
+  String currentWeatherStatus = '';
 
   var selectedCities = City.getSelectedCities();
   List<String> cities = ['London'];
@@ -346,6 +346,7 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: 120,
                     child: ListView.builder(
+                      itemCount: 24,
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {

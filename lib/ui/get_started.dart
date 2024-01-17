@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learncross/models/constants.dart';
+import 'package:learncross/ui/home.dart';
 import 'package:learncross/ui/welcome.dart';
 
 class GetStarted extends StatelessWidget {
@@ -23,7 +24,7 @@ class GetStarted extends StatelessWidget {
               const SizedBox(height: 30,),
               GestureDetector(
                 onTap: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Welcome()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Home()));
                 },
                 child: Container(
                   height: 50,
