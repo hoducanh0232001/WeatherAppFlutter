@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/services.dart';
@@ -312,9 +313,96 @@ class _HomeState extends State<Home> {
                         ),
                       ],
                     ),
-
                   ),
 
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 10),
+              height: size.height * .2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Today', style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                      GestureDetector(
+                        onTap: () => ' tapped',
+                        child: Text('Forecast', style: TextStyle(
+                          color: myConstants.primaryColor,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                        ),),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 8,),
+                  SizedBox(
+                    height: 120,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        String currentTime = DateFormat('HH:mm:ss').format(DateTime.now());
+                        String currentHours = currentTime.substring(0,2);
+                        String forecastTime = hourlyWeatherForecast[index]["time"].substring(11,16);
+                        String forecastHour = hourlyWeatherForecast[index]["time"].substring(11,13);
+                        String forecastWeatherName = hourlyWeatherForecast[index]["condition"]["text"];
+                        String forecastWeatherIcon = "${forecastWeatherName.replaceAll(' ', '').toLowerCase()}.png";
+                        String forecastTemperature = hourlyWeatherForecast[index]["temp_c"].round().toString();
+                        return Container(
+                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          margin: const EdgeInsets.only(right: 20),
+                          width: 65,
+                          decoration: BoxDecoration(
+                            color: currentHours == forecastHour ? Colors.white : myConstants.primaryColor,
+                            borderRadius:const BorderRadius.all(Radius.circular(50)),
+                            boxShadow: [BoxShadow(
+                              offset: const Offset(0, 1),
+                              blurRadius: 5,
+                              color: myConstants.primaryColor.withOpacity(.2),
+                            )],
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(forecastTime, style: TextStyle(
+                                fontSize: 17,
+                                color: myConstants.greyColor,
+                                fontWeight: FontWeight.w500,
+                              ),),
+                              Image.asset('assets/' + forecastWeatherIcon, width: 20,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(forecastTemperature, style: TextStyle(
+                                    color: myConstants.greyColor,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 17,
+                                  ),),
+                                  Text('o',style: TextStyle(
+                                    color: myConstants.greyColor,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    fontFeatures: const[
+                                      FontFeature.enable('sups')
+                                    ],
+                                  ),)
+                                ],
+                              )
+                            ],
+                          ),
+                        );
+
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
