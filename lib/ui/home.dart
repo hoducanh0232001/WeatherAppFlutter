@@ -9,6 +9,7 @@ import 'package:learncross/models/constants.dart';
 import 'package:learncross/models/city.dart';
 import 'package:http/http.dart' as http;
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'detail_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -107,6 +108,7 @@ class _HomeState extends State<Home> {
         overlays: SystemUiOverlay.values);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Container(
         height: size.height,
@@ -170,7 +172,7 @@ class _HomeState extends State<Home> {
                                         controller:
                                             ModalScrollController.of(context),
                                         child: Container(
-                                          height: size.height * .2,
+                                          height: size.height * .75,
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 10, horizontal: 20),
                                           child: Column(
@@ -297,16 +299,19 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         WeatherItem(
+                          text: 'Wind Speed',
                           value: windSpeed.toInt(),
                           unit: 'km/h',
                           imageUrl: 'assets/windspeed.png',
                         ),
                         WeatherItem(
+                          text: 'Humidity',
                           value: humidity.toInt(),
                           unit: '%',
                           imageUrl: 'assets/humidity.png',
                         ),
                         WeatherItem(
+                          text: 'Cloud',
                           value: cloud.toInt(),
                           unit: '%',
                           imageUrl: 'assets/cloud.png',
@@ -333,7 +338,7 @@ class _HomeState extends State<Home> {
                         fontWeight: FontWeight.bold,
                       ),),
                       GestureDetector(
-                        onTap: () => ' tapped',
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_)=> DetailPage(dailyForeCastWeather: dailyWeatherForecast,))),
                         child: Text('Forecast', style: TextStyle(
                           color: myConstants.primaryColor,
                           fontWeight: FontWeight.w600,
@@ -344,9 +349,9 @@ class _HomeState extends State<Home> {
                   ),
                   const SizedBox(height: 8,),
                   SizedBox(
-                    height: 120,
+                    height: 110,
                     child: ListView.builder(
-                      itemCount: 24,
+                      itemCount: hourlyWeatherForecast.length,
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {

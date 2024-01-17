@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class WeatherItem extends StatelessWidget {
   final int value;
   final String unit;
+  final String text;
   final String imageUrl;
   const WeatherItem({
-    super.key, required this.value, required this.unit, required this.imageUrl,
+    super.key, required this.value, required this.unit, required this.imageUrl, required this.text,
   });
 
   @override
@@ -13,6 +14,10 @@ class WeatherItem extends StatelessWidget {
 
     return Column(
       children: [
+        Text(text, style: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+        ),),
         Container(
           padding: EdgeInsets.all(10),
           height: 60,
