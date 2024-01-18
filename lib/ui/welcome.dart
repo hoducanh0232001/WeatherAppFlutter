@@ -20,9 +20,16 @@ class _WelcomeState extends State<Welcome> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          color: Colors.white,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         automaticallyImplyLeading: false,
-        title: Text(selectedCities.length.toString() + ' selected',
-        style: TextStyle(color: Colors.white),),
+        title: Text('${selectedCities.length} selected',
+        style: const TextStyle(color: Colors.white),),
         backgroundColor: myConstants.secondaryColor,
       ),
       body: ListView.builder(

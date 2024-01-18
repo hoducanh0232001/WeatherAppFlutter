@@ -8,6 +8,7 @@ import 'package:learncross/components/weather_item.dart';
 import 'package:learncross/models/constants.dart';
 import 'package:learncross/models/city.dart';
 import 'package:http/http.dart' as http;
+import 'package:learncross/ui/welcome.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'detail_page.dart';
 
@@ -111,6 +112,7 @@ class _HomeState extends State<Home> {
         overlays: SystemUiOverlay.values);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Container(
@@ -144,11 +146,18 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        "assets/menu.png",
-                        width: 40,
-                        height: 40,
+                      GestureDetector(
+                        onTap: () =>{
+                          Navigator.push(context, MaterialPageRoute(builder:
+                              (_)=> Welcome())),
+                        },
+                        child: Image.asset(
+                          "assets/menu.png",
+                          width: 40,
+                          height: 40,
+                        ),
                       ),
+
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
