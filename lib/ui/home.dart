@@ -20,12 +20,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static String API_KEY = "0e1ad3723bf7442283293450241601";
+  static String day = "5";
   TextEditingController _cityControler = TextEditingController();
 
   // API call
   String searchWeatherAPI = "https://api.weatherapi.com/v1/forecast.json?key=" +
-      API_KEY +
-      "&days7&q=";
+      API_KEY + "&days=" + day +"&q=";
   Constants myConstants = Constants();
   int temperature = 0;
   int maxTemp = 0;
@@ -59,6 +59,7 @@ class _HomeState extends State<Home> {
         var newDate = DateFormat('MMMMEEEEd').format(parseDate);
         currentDate = newDate;
         print(currentDate);
+
         // update weather
         currentWeatherStatus = currentWeather["condition"]["text"];
         weatherIcon =
@@ -72,6 +73,8 @@ class _HomeState extends State<Home> {
         dailyWeatherForecast = weatherData["forecast"]["forecastday"];
         hourlyWeatherForecast = dailyWeatherForecast[0]["hour"];
         print(dailyWeatherForecast);
+        print('weatherData = $weatherData' );
+        print(searchWeatherAPI);
       });
     } catch (e) {}
   }
@@ -247,7 +250,7 @@ class _HomeState extends State<Home> {
                   ),
                   SizedBox(
                     height: 160,
-                    child: Image.asset("assets/" + weatherIcon),
+                    child: Image.asset('assets' + weatherIcon),
                     width: double.infinity,
                   ),
                   Row(

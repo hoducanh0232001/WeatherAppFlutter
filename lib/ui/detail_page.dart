@@ -322,7 +322,7 @@ class _DetailPageState extends State<DetailPage> {
                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: [
-                                                  Text(getForecastWeather(0)["forecastDate"], style:const TextStyle(
+                                                  Text(getForecastWeather(1)["forecastDate"], style:const TextStyle(
                                                     color: Color(0xff6696f5),
                                                     fontWeight: FontWeight.w600,
 
@@ -331,7 +331,7 @@ class _DetailPageState extends State<DetailPage> {
                                                     children: [
                                                       Row(
                                                         children: [
-                                                          Text(getForecastWeather(0)["minTemperature"].toString(),
+                                                          Text(getForecastWeather(1)["minTemperature"].toString(),
                                                             style: TextStyle(
                                                               color: _constants.greyColor,
                                                               fontSize: 30,
@@ -349,7 +349,7 @@ class _DetailPageState extends State<DetailPage> {
                                                       const SizedBox(width: 5,),
                                                       Row(
                                                         children: [
-                                                          Text(getForecastWeather(0)["maxTemperature"].toString(),
+                                                          Text(getForecastWeather(1)["maxTemperature"].toString(),
                                                             style: TextStyle(
                                                               color: _constants.blackColor,
                                                               fontSize: 30,
@@ -376,9 +376,9 @@ class _DetailPageState extends State<DetailPage> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
-                                                      Image.asset('assets/' + getForecastWeather(0)["weatherIcon"],width: 30,),
+                                                      Image.asset('assets/' + getForecastWeather(1)["weatherIcon"],width: 30,),
                                                       const SizedBox(width: 5,),
-                                                      Text(getForecastWeather(0)["weatherName"], style:const TextStyle(
+                                                      Text(getForecastWeather(1)["weatherName"], style:const TextStyle(
                                                         fontSize: 16,
                                                         color: Colors.grey,
                                                       ),),
@@ -387,7 +387,7 @@ class _DetailPageState extends State<DetailPage> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
-                                                      Text(getForecastWeather(0)["chanceOfRain"].toString() + "%", style:const TextStyle(
+                                                      Text(getForecastWeather(1)["chanceOfRain"].toString() + "%", style:const TextStyle(
                                                         fontSize: 18,
                                                         color: Colors.grey,
                                                       ),),
@@ -414,7 +414,7 @@ class _DetailPageState extends State<DetailPage> {
                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: [
-                                                  Text(getForecastWeather(0)["forecastDate"], style:const TextStyle(
+                                                  Text(getForecastWeather(2)["forecastDate"], style:const TextStyle(
                                                     color: Color(0xff6696f5),
                                                     fontWeight: FontWeight.w600,
 
@@ -423,7 +423,7 @@ class _DetailPageState extends State<DetailPage> {
                                                     children: [
                                                       Row(
                                                         children: [
-                                                          Text(getForecastWeather(0)["minTemperature"].toString(),
+                                                          Text(getForecastWeather(2)["minTemperature"].toString(),
                                                             style: TextStyle(
                                                               color: _constants.greyColor,
                                                               fontSize: 30,
@@ -441,7 +441,7 @@ class _DetailPageState extends State<DetailPage> {
                                                       const SizedBox(width: 5,),
                                                       Row(
                                                         children: [
-                                                          Text(getForecastWeather(0)["maxTemperature"].toString(),
+                                                          Text(getForecastWeather(2)["maxTemperature"].toString(),
                                                             style: TextStyle(
                                                               color: _constants.blackColor,
                                                               fontSize: 30,
@@ -468,9 +468,9 @@ class _DetailPageState extends State<DetailPage> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
-                                                      Image.asset('assets/' + getForecastWeather(0)["weatherIcon"],width: 30,),
+                                                      Image.asset('assets/' + getForecastWeather(2)["weatherIcon"],width: 30,),
                                                       const SizedBox(width: 5,),
-                                                      Text(getForecastWeather(0)["weatherName"], style:const TextStyle(
+                                                      Text(getForecastWeather(2)["weatherName"], style:const TextStyle(
                                                         fontSize: 16,
                                                         color: Colors.grey,
                                                       ),),
@@ -479,7 +479,7 @@ class _DetailPageState extends State<DetailPage> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
-                                                      Text(getForecastWeather(0)["chanceOfRain"].toString() + "%", style:const TextStyle(
+                                                      Text(getForecastWeather(2)["chanceOfRain"].toString() + "%", style:const TextStyle(
                                                         fontSize: 18,
                                                         color: Colors.grey,
                                                       ),),
@@ -506,7 +506,7 @@ class _DetailPageState extends State<DetailPage> {
                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: [
-                                                  Text(getForecastWeather(0)["forecastDate"], style:const TextStyle(
+                                                  Text(getForecastWeather(3)["forecastDate"], style:const TextStyle(
                                                     color: Color(0xff6696f5),
                                                     fontWeight: FontWeight.w600,
 
@@ -515,7 +515,7 @@ class _DetailPageState extends State<DetailPage> {
                                                     children: [
                                                       Row(
                                                         children: [
-                                                          Text(getForecastWeather(0)["minTemperature"].toString(),
+                                                          Text(getForecastWeather(3)["minTemperature"].toString(),
                                                             style: TextStyle(
                                                               color: _constants.greyColor,
                                                               fontSize: 30,
@@ -533,7 +533,7 @@ class _DetailPageState extends State<DetailPage> {
                                                       const SizedBox(width: 5,),
                                                       Row(
                                                         children: [
-                                                          Text(getForecastWeather(0)["maxTemperature"].toString(),
+                                                          Text(getForecastWeather(3)["maxTemperature"].toString(),
                                                             style: TextStyle(
                                                               color: _constants.blackColor,
                                                               fontSize: 30,
@@ -560,9 +560,9 @@ class _DetailPageState extends State<DetailPage> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
-                                                      Image.asset('assets/' + getForecastWeather(0)["weatherIcon"],width: 30,),
+                                                      Image.asset('assets/' + getForecastWeather(3)["weatherIcon"],width: 30,),
                                                       const SizedBox(width: 5,),
-                                                      Text(getForecastWeather(0)["weatherName"], style:const TextStyle(
+                                                      Text(getForecastWeather(3)["weatherName"], style:const TextStyle(
                                                         fontSize: 16,
                                                         color: Colors.grey,
                                                       ),),
@@ -571,7 +571,7 @@ class _DetailPageState extends State<DetailPage> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
-                                                      Text(getForecastWeather(0)["chanceOfRain"].toString() + "%", style:const TextStyle(
+                                                      Text(getForecastWeather(3)["chanceOfRain"].toString() + "%", style:const TextStyle(
                                                         fontSize: 18,
                                                         color: Colors.grey,
                                                       ),),
