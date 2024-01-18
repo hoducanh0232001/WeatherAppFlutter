@@ -250,7 +250,7 @@ class _HomeState extends State<Home> {
                   ),
                   SizedBox(
                     height: 160,
-                    child: Image.asset('assets' + weatherIcon),
+                    child: Image.asset('assets/' + weatherIcon),
                     width: double.infinity,
                   ),
                   Row(
