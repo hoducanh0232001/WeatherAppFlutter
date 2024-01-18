@@ -786,7 +786,7 @@ class _DetailPageState extends State<DetailPage> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Text(getForecastWeather(4)["forecastDate"], style:const TextStyle(
+                                      Text(getForecastWeather(6)["forecastDate"], style:const TextStyle(
                                         color: Color(0xff6696f5),
                                         fontWeight: FontWeight.w600,
 
