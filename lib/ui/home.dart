@@ -20,7 +20,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static String API_KEY = "0e1ad3723bf7442283293450241601";
-  static String day = "5";
+  static String day = "7";
   TextEditingController _cityControler = TextEditingController();
 
   // API call
